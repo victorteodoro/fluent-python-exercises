@@ -11,6 +11,12 @@ class Vector:
 
     def __str__(self):
         return 'Vector(%r, %r)' % (self.x, self.y)
+    
+    def __pos__(self):
+        return Vector(self.x, self.y)
+    
+    def __neg__(self):
+        return Vector(-self.x, -self.y)
 
     def __abs__(self):
         return hypot(self.x, self.y)
@@ -20,12 +26,24 @@ class Vector:
 
     def __add__(self, otherVector):
         return Vector(self.x + otherVector.x, self.y + otherVector.y)
+    
+    def __sub__(self, otherVector):
+        return Vector(self.x - otherVector.x, self.y - otherVector.y)
 
     def __mul__(self, scalar):
         return Vector(self.x * scalar, self.y * scalar)
 
     def __rmul__(self, scalar):
         return Vector(self.x * scalar, self.y * scalar)
+    
+    def __eq__(self, other):
+        return (self.x == other.x) and (self.y == other.y)
+    
+    def __gt__(self, other):
+        return abs(self) > abs(other)
+    
+    def __ge__(self, other):
+        return abs(self) >= abs(other)
 
 
 firstVector = Vector(3, 4)
