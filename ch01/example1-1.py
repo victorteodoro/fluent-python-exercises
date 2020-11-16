@@ -22,9 +22,9 @@ class FrenchDeck:
 # Play around with the class possibilities
 deck = FrenchDeck()
 
-print("The size of the deck is", len(deck), "cards")
-print("The first card is", deck[0])
-print("The last card is", deck[-1])
+print(f"The size of the deck is { len(deck) } cards")
+print(f"The first card is { deck[0] }")
+print(f"The last card is { deck[-1] }")
 
 print("A random card from the deck:", choice(deck))
 print("Another random card from the deck:", choice(deck))
